@@ -1,15 +1,9 @@
 
-          // переменная, в которой хранится выбранное математическое действие
           var op; 
-    
-          // функция расчёта
           function func() {
-              // переменная для результата
             var result;
-            // получаем первое и второе число
             var num1 = Number(document.getElementById("num1").value);
             var num2 = Number(document.getElementById("num2").value);
-            // смотрим, что было в переменной с действием и действуем исходя из этого
             switch (op) {
               case '+':
                 result = num1 + num2;
@@ -24,17 +18,18 @@
                 result = num1 / num2;
                 break;
             }
-    
-            // отправляем результат на страницу
-            document.getElementById("result").innerHTML = result;
+               document.getElementById("result").innerHTML = result;
           }
-          function click1() {
-            let f1 = document.getElementsByName("field1");
-            let f2 = document.getElementsByName("field2");
-            let r = document.getElementById("result");
-            r.innerHTML = f1[0].value + f2[0].value;
-            return false;
+
+          function onClick() {
+            alert("click");
           }
+          
+          window.addEventListener('DOMContentLoaded', function (onClick1) {
+            console.log("Nan");
+            let b = document.getElementById("button1");
+            b.addEventListener("Неверные данные", onClick);
+          });
 
           function onClick1() {
             let f1 = document.getElementsByName("field1");
