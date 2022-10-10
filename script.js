@@ -21,6 +21,19 @@
                document.getElementById("result").innerHTML = result;
           }
 
+          button1.addEventListener('click', function(){
+            var x = a.value; 
+            var y = b.value; // Это еще строки, не числа
+            
+            var sum = +x + +y; // Плюсик перед строкой - превращает её в число.
+            
+            /* Перед тем, как вывести результат - идет проверка условия
+            && - значит 'И'. А NaN или пустая "" строка в логическом контексте будут false 
+            Чтобы оно выплнилось, и sum не должен быть NaN, и строки не должны быть пустыми. 
+            использована функция isNaN, потому что иначе 0 + 0 будет false */
+            res.textContent = ( !isNaN(sum) && x && y ) ? sum : 'Введите числа!';
+          });
+
           function onClick() {
             alert("click");
           }
@@ -31,22 +44,10 @@
             b.addEventListener("Неверные данные", onClick);
           });
 
-          function onClick1() {
-            let f1 = document.getElementsByName("field1");
-            let f2 = document.getElementsByName("field2");
-            let r = document.getElementById("result");
-            var result = parseInt(f1[0].value) * parseInt(f2[0].value)
-            r.innerHTML = result;
-            let с = document.getElementById("button1");
-            return false;
-        }
-        
-        function onClick2() {
-            let f1 = document.getElementsByName("field1");
-            let f2 = document.getElementsByName("field2");
-            let r = document.getElementById("result");
-            r.innerHTML = None;
-            f1.innerHTML = None;
-            f2.innerHTML = None;
-            return false;
-        }
+          ok.addEventListener('click', function(){
+            var x = document.getElementsByName("field1");
+            var y = document.getElementsByName("field2");
+            var res = document.getElementsById("result");
+            var sum = +x * +y;
+            res.textContent = ( !isNaN(sum) && x && y ) ? sum : 'Введите числа!';
+          });
