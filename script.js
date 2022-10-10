@@ -6,6 +6,6 @@ var res = document.getElementById('result');
 ok.addEventListener('click', function(){
   var x = a.value; 
   var y = b.value; 
-  var sum = +x * +y; 
-  res.textContent = ( !isNaN(sum) && x && y ) ? sum : 'Введите числа!';
+  var sum = +x * +y;
+  res.textContent = ( !isNaN(sum) && x && y && (x<0) && (y<0)) ? sum : 'Введите числа!';
 });
