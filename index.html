@@ -10,6 +10,7 @@
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
       <meta charset="utf-8">
       <title>House site</title>
+<script src="script.js" defer></script>
       <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
@@ -33,61 +34,21 @@
             </div>
           </div>
             <div class="container md-5 p-5 bg-success text-white rounded"> 
-                      <!-- поле ввода первого числа -->
-        <input id="num1">
-    
-        <!-- блок с кнопками -->
-        <div id="operator_btns">
-          <button id="plus" onclick="op='+'">+</button>
-          <button id="minus" onclick="op='-'">-</button>
-          <button id="times" onclick="op='*'">x</button>
-          <button id="divide" onclick="op='/'">:</button>
+                    
+
+          <div class="col">
+            <div class="calculator">
+                <h2>Калькулятор стоимости</h2>
+                <form id="calc">
+                    <h3>Цена?</h3>
+                    <input name="field1" type="text" id="field1">
+                    <h3>Колличество?</h3>
+                    <input name="field2" type="text" id="field2">
+                    <button id="button1" onclick="return onClick1()"><h3>=</h3></button>
+                </form>
+                <div id="result"></div>
+            </div>
         </div>
-    
-        <!-- поле ввода второго числа -->
-        <input id="num2">
-        <br>
-    
-        <!-- кнопка для расчётов -->
-        <button onclick="func()">Посчитать</button>
-    
-        <!-- здесь будет результат -->
-        <p id="result"></p>
-    
-        <!-- наш скрипт -->
-        <script>
-          // переменная, в которой хранится выбранное математическое действие
-          var op; 
-    
-          // функция расчёта
-          function func() {
-              // переменная для результата
-            var result;
-            // получаем первое и второе число
-            var num1 = Number(document.getElementById("num1").value);
-            var num2 = Number(document.getElementById("num2").value);
-            // смотрим, что было в переменной с действием и действуем исходя из этого
-            switch (op) {
-              case '+':
-                result = num1 + num2;
-                break;
-              case '-':
-                result = num1 - num2;
-                break;
-              case '*':
-                result = num1 * num2;
-                break;
-              case '/':
-                result = num1 / num2;
-                break;
-            }
-    
-            // отправляем результат на страницу
-            document.getElementById("result").innerHTML = result;
-          }
-        </script>
-    
-    
             </div>
          <div class = "footer-fluid bg-success rounded text-white m-3 ">
             (с) Сторожева Полина 2022 
